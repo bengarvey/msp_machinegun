@@ -5,7 +5,9 @@ Quickly update and schedule new work on a directory of MS Project files
 
 We were tediously going through and edited MS Project Files, so this script opens up all the files in a directory and asks for updates for each one.  It then reschedules all new work to be started the next day.
 
-If anything, it's a good reference for how to manipulate MS Project files in Ruby.
+If anything, it's a good reference for how to manipulate MS Project files in Ruby.  
+
+Here's a <a href="http://rubyonwindows.blogspot.com/2007/04/automating-microsoft-project-with-ruby.html">great blog post</a> about using MS Project and Ruby together.
 
 To use it, set the paths in reportgen.rb and update.rb to where your project files are.  A file called list.txt is created.
 
