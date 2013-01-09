@@ -26,7 +26,7 @@ class MachineGun
 	key 		= ""
   
 	# Get our and create actions
-    File.open('list.txt').each_line { |s|
+	File.open('list.txt').each_line { |s|
 		if /.*\.mpp/.match(s) 
 			key = /.*\.mpp/.match(s)[0]
 			actions[key] = Hash.new
