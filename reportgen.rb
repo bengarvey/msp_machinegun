@@ -2,10 +2,9 @@
 # Ben Garvey
 # bengarvey@garvey.com
 # @bengarvey
-# 01/02/2013
+# 01/09/2013
 # Generates a list of projects to update
 
-require 'rubygems'
 require_relative 'mspmg.rb'
 
 m = MachineGun.new

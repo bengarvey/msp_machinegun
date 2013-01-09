@@ -38,7 +38,7 @@ class MachineGun
 	
   end
   
-  def writeList
+  def writeReport
   
 	list = ""
 	files = getList	
