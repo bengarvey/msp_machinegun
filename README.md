@@ -37,7 +37,7 @@ sch1.mpp<br>
 sch2.mpp<br>
 15, 1 # sch2.mpp's 15th task will have 1 remaining day and it's actual duraction will be +1<br>
 sch3.mpp # No change<br>
-ch4.mpp<br>
+sch4.mpp<br>
 90,0 # Same as the others above.  You get the idea<br>
 5,5,<br>
 30,1<br>
