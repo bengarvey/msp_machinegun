@@ -31,14 +31,15 @@ sch4.mpp<br>
 30,1<br>
 
 Save list.txt and then run update.rb.  The above will make the following changes.
+
 sch1.mpp<br>
-20,0 # 20th task will have 0 remaining days and its actual duration will go up by 1<br>
-21, 1 # 21st task will have 1 remaining day and it's actual duration will go up by 1<br>
+20,0      # 20th task will have 0 remaining days and its actual duration will go up by 1<br>
+21, 1     # 21st task will have 1 remaining day and it's actual duration will go up by 1<br>
 sch2.mpp<br>
-15, 1 # sch2.mpp's 15th task will have 1 remaining day and it's actual duraction will be +1<br>
-sch3.mpp # No change<br>
+15, 1     # sch2.mpp's 15th task will have 1 remaining day and it's actual duraction will be +1<br>
+sch3.mpp  # No change<br>
 sch4.mpp<br>
-90,0 # Same as the others above.  You get the idea<br>
+90,0      # Same as the others above.  You get the idea<br>
 5,5,<br>
 30,1<br>
 
