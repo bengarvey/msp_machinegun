@@ -24,6 +24,10 @@ class MachineGun
 	donedone 	= false  
 	actions 	= Hash.new
 	key 		= ""
+	
+	# Get today's date
+	d = Date.today
+	dstr = d.strftime("%D") + " 5:00 PM"
   
 	# Get our and create actions
 	File.open('list.txt').each_line { |s|
@@ -36,7 +40,7 @@ class MachineGun
 			actions[key][tid] = rem
 			puts "Setting #{tid} to #{actions[key][tid]} in #{key}"
 		end
-	} 
+	 } 
 	
 	puts
 	
@@ -67,9 +71,15 @@ class MachineGun
 			# Make sure this is a valid task
 			if t.to_i < tasks.count && t.to_i > 0
 				puts "\tSetting #{t} to #{actions[k][t]} for #{k}"
+				tasks[t].RemainingDuration 	= actions[k][t].to_i * 480				
 				puts "\tIncreasing #{t}'s actual duration to #{ (tasks[t].ActualDuration + 480) / 480} for #{k}"
 				tasks[t].ActualDuration 	= tasks[t].ActualDuration + 480
-				tasks[t].RemainingDuration 	= actions[k][t].to_i * 480
+				
+				# Make sure task gets closed out today if we're done. This fixes a bug that was closing tasks in the future. It may set the duration back to 0, which is ok.
+				if (actions[k][t].to_i == 0)
+					tasks[t].Finish = d.strftime("%D")
+				end
+				
 			else
 				puts "Couldn't find task #{t} in #{k}. Skipping it!"
 			end
@@ -77,8 +87,6 @@ class MachineGun
 		
 		# Schedule new work after today
 		puts "Advancing project..."		
-		d = Date.today
-		dstr = d.strftime("%D") + " 5:00 PM"
 		puts "Scheduling tasks to start after #{dstr}"
 		app.UpdateProject(true, dstr, 2)
 		

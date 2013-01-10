@@ -7,5 +7,7 @@
 
 require_relative 'mspmg.rb'
 m = MachineGun.new
+m.dir = 'C:\Users\bengarvey\Dropbox\projects\msp_machinegun\projects'
+#m.dir = 'U:\PROJ2000'
 m.fire
   
