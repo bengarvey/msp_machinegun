@@ -48,7 +48,7 @@ class MachineGun
 	app = WIN32OLE.new("MSProject.Application")
 	
 	# Run in the background
-	app.Visible = true
+	app.Visible = false
 	
 	# Loop through hash and open each file
 	actions.each_key do |k|
@@ -69,7 +69,7 @@ class MachineGun
 		# Loop through each action
 		actions[k].each_key do |t|
 			# Make sure this is a valid task
-			if t.to_i < tasks.count && t.to_i > 0
+			if t.to_i <= tasks.count && t.to_i > 0
 				puts "\tSetting #{t} to #{actions[k][t]} for #{k}"
 				tasks[t].RemainingDuration 	= actions[k][t].to_i * 480	
 				
@@ -78,6 +78,7 @@ class MachineGun
 				
 				# Make sure task gets closed out today if we're done. This fixes a bug that was closing tasks in the future. It may set the duration back to 0, which is ok.
 				if (actions[k][t].to_i == 0)
+					tasks[t].PercentComplete = 100
 					tasks[t].Finish = d.strftime("%D")
 				end
 				
